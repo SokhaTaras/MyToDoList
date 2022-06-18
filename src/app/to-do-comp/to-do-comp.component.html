@@ -1,0 +1,22 @@
+
+<div class="todos">
+  <form (submit)="addToDo()">
+    <input
+      type="text"
+      placeholder="Enter goals..."
+      name="inputToDo"
+      class="mainInput"
+      [(ngModel)]="inputToDo"
+    />
+    <button class="addBTN" type="submit" [disabled]="!inputToDo">Add me</button>
+  </form>
+  <div class="table">
+  <div *ngFor="let todo of todoList; let i = index;"
+        class="innerContent {{(todo.isCompleted ? 'done' : '')}}"
+  >
+    <div  class="content" (click)="toggleDone(i)">{{i + 1}}.{{todo.content}}</div>
+    <button class="delete" (click)="removeToDo(i)">X</button>
+  </div>
+  </div>
+  <button (click)="clearAll(todoList)" class="deleteAll">Delete all</button>
+</div>

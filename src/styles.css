@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+.page{
+  background-color: cadetblue;
+  background-image: linear-gradient(to right, cornflowerblue, skyblue) ;
+  font-family: Courier New, monospace;
+}
